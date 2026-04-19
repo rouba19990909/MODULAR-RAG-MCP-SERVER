@@ -47,18 +47,18 @@ def _page_evaluation_panel() -> None:
 # ── Navigation ───────────────────────────────────────────────────────
 
 pages = [
-    st.Page(_page_overview, title="Overview", icon="📊", default=True),
-    st.Page(_page_data_browser, title="Data Browser", icon="🔍"),
-    st.Page(_page_ingestion_manager, title="Ingestion Manager", icon="📥"),
-    st.Page(_page_ingestion_traces, title="Ingestion Traces", icon="🔬"),
-    st.Page(_page_query_traces, title="Query Traces", icon="🔎"),
-    st.Page(_page_evaluation_panel, title="Evaluation Panel", icon="📏"),
+    st.Page(_page_overview, title="概览", icon="📊", default=True),
+    st.Page(_page_data_browser, title="数据浏览器", icon="🔍"),
+    st.Page(_page_ingestion_manager, title="摄取管理器", icon="📥"),
+    st.Page(_page_ingestion_traces, title="摄取跟踪", icon="🔬"),
+    st.Page(_page_query_traces, title="查询跟踪", icon="🔎"),
+    st.Page(_page_evaluation_panel, title="评估面板", icon="📏"),
 ]
 
 
 def main() -> None:
     st.set_page_config(
-        page_title="Modular RAG Dashboard",
+        page_title="模块化RAG仪表板",
         page_icon="📊",
         layout="wide",
     )
