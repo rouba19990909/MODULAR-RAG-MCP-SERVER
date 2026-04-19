@@ -1,0 +1,73 @@
+# Configuration file for Modular RAG MCP Server
+
+# LLM Configuration
+llm:
+  provider: azure  # Options: azure, openai, ollama, deepseek
+  model: gpt-4o
+  azure_endpoint: "https://your-resource.openai.azure.com/"
+  api_key: "${AZURE_OPENAI_API_KEY}"
+  api_version: "2024-02-01"
+
+# Vision LLM Configuration (for image captioning)
+vision_llm:
+  provider: azure  # Options: azure, openai
+  model: gpt-4o
+  azure_endpoint: "https://your-resource.openai.azure.com/"
+  api_key: "${AZURE_OPENAI_API_KEY}"
+  api_version: "2024-02-01"
+  max_image_size: 2048
+
+# Embedding Configuration
+embedding:
+  provider: openai  # Options: openai, azure, ollama
+  model: text-embedding-3-small
+  api_key: "${OPENAI_API_KEY}"
+
+# Vector Store Configuration
+vector_store:
+  backend: chroma  # Options: chroma, qdrant, pinecone
+  persist_path: "./data/db/chroma"
+
+# Retrieval Configuration
+retrieval:
+  sparse_backend: bm25  # Options: bm25, elasticsearch
+  fusion_algorithm: rrf  # Options: rrf, weighted_sum
+  top_k_dense: 20
+  top_k_sparse: 20
+  top_k_final: 10
+
+# Reranker Configuration
+rerank:
+  backend: cross_encoder  # Options: none, cross_encoder, llm
+  model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  top_m: 30
+
+# Ingestion Configuration
+ingestion:
+  chunk_size: 1000
+  chunk_overlap: 200
+  splitter_provider: recursive  # Options: recursive, semantic, fixed_length
+  chunk_refiner:
+    use_llm: false  # Set to true to enable LLM-based refinement
+  metadata_enricher:
+    use_llm: false  # Set to true to enable LLM-based enrichment
+  image_captioner:
+    enabled: false  # Set to true to enable image captioning
+
+# Evaluation Configuration
+evaluation:
+  backends: ["custom"]  # Options: ragas, custom
+  golden_test_set: "./tests/fixtures/golden_test_set.json"
+
+# Observability Configuration
+observability:
+  enabled: true
+  log_file: "./logs/traces.jsonl"
+
+# Dashboard Configuration
+dashboard:
+  enabled: true
+  port: 8501
+  traces_dir: "./logs"
+  auto_refresh: true
+  refresh_interval: 5

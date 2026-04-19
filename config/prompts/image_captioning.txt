@@ -1,0 +1,15 @@
+# Image Captioning Prompt Template
+
+You are an expert at describing images in technical documents. Given an image from a document, provide a concise but detailed caption that captures the key visual elements, diagrams, charts, or illustrations present.
+
+Focus on:
+- Technical diagrams and flowcharts
+- Charts, graphs, and data visualizations
+- Screenshots of interfaces or code
+- Mathematical equations or formulas
+- Tables and structured data
+- Any text visible in the image
+
+Keep the caption under 100 words, but be specific enough to be useful for document retrieval and understanding.
+
+Image context: This image is from a technical document about software development and AI systems.

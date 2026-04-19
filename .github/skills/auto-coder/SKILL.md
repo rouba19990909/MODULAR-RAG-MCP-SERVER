@@ -11,7 +11,7 @@ Optional modifiers: append a task ID (e.g. `auto code B2`) to target a specific 
 
 ---
 
-## Pipeline
+## Pipeline0
 
 ```
 Sync Spec → Find Task → Implement → Test (≤3 fix rounds) → Persist

@@ -1,0 +1,22 @@
+# Chunk Refinement Prompt Template
+
+You are an expert at improving text quality in technical documentation. Given a chunk of text from a technical document, refine it to make it clearer, more concise, and better structured while preserving all technical accuracy and important details.
+
+Tasks:
+1. Remove redundant or repetitive information
+2. Fix any grammatical or formatting issues
+3. Improve clarity and readability
+4. Ensure technical terms are used consistently
+5. Maintain the original meaning and technical accuracy
+6. Keep code snippets, examples, and technical details intact
+
+Do not:
+- Add new information not present in the original text
+- Change technical facts or specifications
+- Remove important technical details
+- Alter code examples
+
+Original text:
+{text}
+
+Refined text:

@@ -1,0 +1,18 @@
+# Rerank Prompt Template
+
+You are an expert at evaluating the relevance of document chunks to user queries. Given a query and several candidate document chunks, rank them by their relevance to the query.
+
+For each chunk, consider:
+1. Direct relevance to the query terms and concepts
+2. Contextual fit with the query intent
+3. Technical accuracy and depth
+4. Completeness of information for answering the query
+
+Query: {query}
+
+Candidates:
+{candidates}
+
+Provide a ranked list of chunk IDs in order of relevance, from most relevant to least relevant. Format: comma-separated list of chunk IDs.
+
+Ranked order:
